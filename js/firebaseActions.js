@@ -13,6 +13,7 @@ import { db } from './firebaseConfig.js';
 
 import { customers } from './user-json-data.js';
 
+// Enable DB persistence
 enableIndexedDbPersistence(db).catch((err) => {
   if (err.code == 'failed-precondition') {
     // Multiple tabs open, persistence can only be enabled
@@ -26,6 +27,8 @@ enableIndexedDbPersistence(db).catch((err) => {
 });
 
 const colRef = collection(db, 'customers');
+
+// The following function was used to take my 'user.json file' and upload it to Firebase
 
 /* const setUserData = async (customer) => {
   try {
@@ -50,8 +53,17 @@ export const getCustomers = async () => {
   }
 };
 
+/**
+ * @date 2023-02-01
+ * @desc updates a customer data specifically by updating the in_planning property
+ * @param {Boolean} in_planning shows if the document i hap
+ * @param {HTMLElement | null} container the container the customer information was dragged. Is null when the customer is placed back in the deliveries inter
+ * @param {Number} id the cusomer ID
+ */
 export const updateCustomer = async (in_planning, container = null, id) => {
-  let customerRef = doc(db, 'customers', id.toString());
+  let customerRef = doc(db, 'customers', id.toString()); // get a reference to the current customer
+
+  // if the in_planning was false
   if (in_planning === false) {
     try {
       return await updateDoc(customerRef, {
