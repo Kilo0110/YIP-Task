@@ -4,6 +4,7 @@
   - [Task Overview](#task-overview)
   - [About My Solution](#about-my-solution)
   - [Languages and Tools Used](#languages-and-tools-used)
+  - [Live site](#live-site)
 
 
 ## Task Overview
@@ -33,3 +34,7 @@ I also leveraged Firebase's offline capabilities by enabling offline persistence
 - Javascript
 - [Firebase](firebae.google.com)
 - [Moment.js](momentjs.com) 
+
+## Live site
+
+To view the live site, click [here](https://yips-logistico.netlify.app/)
