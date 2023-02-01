@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  outline: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  background-image: linear-gradient(to right top, #515023, #605f26, #6f6e29, #7e7d2c, #8e8d2f);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: small;
+  text-align: center;
+  padding: 3em 0;
+}
+
+.main {
+  display: flex;
+  padding: 2em 1em;
+  gap: 2em;
+}
+
+.deliveries-container,
+.planner-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.draggable {
+  cursor: move;
+}
+.draggable.dragging {
+  opacity: 0.3;
+}
+
+.deliveries {
+  padding: 1em;
+  background: #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.deliveries img {
+  border: 5px solid white;
+  border-radius: 50%;
+  background-color: white;
+  width: 5rem;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  align-self: center;
+}
+.deliveries .customer-name,
+.deliveries .customer-id {
+  text-align: center;
+  font-weight: bold;
+}
+
+.slots {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.slots-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ddd;
+  border-radius: 10px;
+  padding: 0.75em 1em;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: smaller;
+  }
+  .deliveries img {
+    display: none;
+  }
+  .deliveries .customer-name,
+.deliveries .customer-id {
+    text-align: left;
+  }
+  .slots h1 {
+    font-size: medium;
+  }
+  .slots .date-indicator {
+    font-size: smaller;
+  }
+}/*# sourceMappingURL=index.css.map */

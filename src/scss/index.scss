@@ -1,0 +1,108 @@
+@use './resets';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  background-image: linear-gradient(to right top, #515023, #605f26, #6f6e29, #7e7d2c, #8e8d2f);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: small;
+  text-align: center;
+  padding: 3em 0;
+}
+
+.main {
+  display: flex;
+  padding: 2em 1em;
+  gap: 2em;
+}
+
+.deliveries-container,
+.planner-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.draggable {
+  cursor: move;
+
+  &.dragging {
+    opacity: .3;
+  }
+}
+
+.deliveries {
+  padding: 1em;
+  background: #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+
+  img {
+    border: 5px solid white;
+    border-radius: 50%;
+    background-color: white;
+    width: 5rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    align-self: center;
+  }
+
+  .customer-name,
+  .customer-id {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.slots {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ddd;
+    border-radius: 10px;
+    padding: .75em 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: smaller;
+  }
+
+  .deliveries {
+
+    img {
+      display: none;
+    }
+
+    .customer-name,
+    .customer-id {
+      text-align: left;
+    }
+  }
+
+  .slots {
+    h1 {
+      font-size: medium;
+    }
+
+    .date-indicator {
+      font-size: smaller;
+    }
+  }
+}
